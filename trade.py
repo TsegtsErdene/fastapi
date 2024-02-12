@@ -2,15 +2,10 @@ import MetaTrader5 as mt
 
 mt.initialize()
 
-# login = 520044350
-# password = "6NX@9Nq6H9"
-# server = "FTMO-Server2"
+# login = 212769315
+# password = "Blackstar15"
+# server = "OctaFX-Demo"
 # mt.login(login, password, server)
-
-
-
-
-
 
 
 def tradebuy(symbol, type, stop_loss, take_profit, lotsize,tp_first):
@@ -41,5 +36,3 @@ def tradebuy(symbol, type, stop_loss, take_profit, lotsize,tp_first):
     order = mt.order_send(request)
 
     return order.order
-
-tradebuy("XAUUSD","BUY",0.0,0.0,0.06,"ok")
