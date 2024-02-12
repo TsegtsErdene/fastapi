@@ -8,9 +8,9 @@ mt.initialize()
 # mt.login(login, password, server)
 
 
-def tradebuy(symbol, type, stop_loss, take_profit, lotsize,tp_first):
+def tradebuy(symbol, type, stop_loss, take_profit, lotsize,comment):
 
-    if type == "BUY":
+    if type == 0:
         type_trade = mt.ORDER_TYPE_BUY
         price = mt.symbol_info_tick(symbol).ask
     else:
@@ -29,7 +29,7 @@ def tradebuy(symbol, type, stop_loss, take_profit, lotsize,tp_first):
         "magic": 234000,
         "type_time": mt.ORDER_TIME_GTC,
         "type_filling": mt.ORDER_FILLING_IOC,
-        "comment":tp_first
+        "comment":comment
     }
 
 
