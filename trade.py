@@ -36,3 +36,23 @@ def tradebuy(symbol, type, stop_loss, take_profit, lotsize,comment):
     order = mt.order_send(request)
 
     return order.order
+
+def tradeclose(comment):
+    # Get a list of open positions
+    positions = mt.positions_get()
+    counter = False
+
+    for position in positions:
+        # Check if the position's comment matches the ticket
+        print(type(position.comment),"  ")
+        if position.comment == str(comment):
+            
+            mt.Close(position.symbol,ticket=position.ticket)
+            counter = True
+
+            print(f"Closed position with comment {comment}")
+    if(counter):
+        return True  # Return True if a position was closed
+    else:
+        print(f"No open position found with comment {comment}")
+        return False  # Return False if no position was closed

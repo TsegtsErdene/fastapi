@@ -25,5 +25,5 @@ def process_added_data(data):
     trade.tradebuy(data["Symbol"],data["Type"],0.0,0.0,data['Lot'],data['Ticket'])
 
 def process_closed_data(data):
-    # Implement your logic for processing closed data
     print("Processing closed data:", data)
+    trade.tradeclose(data['Ticket'])
