@@ -41,3 +41,5 @@ def tradebuy(symbol, type, stop_loss, take_profit, lotsize,tp_first):
     order = mt.order_send(request)
 
     return order.order
+
+tradebuy("XAUUSD","BUY",0.0,0.0,0.06,"ok")
